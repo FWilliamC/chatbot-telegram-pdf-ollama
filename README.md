@@ -42,7 +42,8 @@ bash:
 
 ***ollama --version***
 
-capturaaaaa
+
+![Verificación de Docker](https://github.com/FWilliamC/chatbot-telegram-pdf-ollama/blob/main/Captura%20de%20pantalla%202025-11-21%20175544.png)
 
 
 Descargar modelos necesarios:
@@ -54,4 +55,4 @@ bash:
 ***ollama pull nomic-embed-text***
 
 
-
+![Verificación de Docker]
