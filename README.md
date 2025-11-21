@@ -22,4 +22,14 @@ Pasos:
 
 2. Instalarlo y verificar el funcionamiento con:
 
-   ![Captura1](https://raw.githubusercontent.com/FWilliamC/chatbot-telegram-pdf-ollama/main/Captura%20de%20pantalla%202025-11-21%2020172633.png)
+2. Instalarlo y verificar el funcionamiento con:
+
+![Verificación de Docker](https://raw.githubusercontent.com/FWilliamC/chatbot-telegram-pdf-ollama/main/Captura%20de%20pantalla%202025-11-21%20172633.png)
+
+# 1.2. Instalar Ollama (Local LLM)
+
+Ollama permite ejecutar modelos como llama3, mistral, nomic-embed-text, etc.
+
+Instalación:
+
+En Windows:
