@@ -20,9 +20,7 @@ Pasos:
 
 1. Descargar Docker Desktop desde https://www.docker.com/
 
-2. Instalarlo y verificar el funcionamiento con:
-
-2. Instalarlo y verificar el funcionamiento con:
+2. Instalarlo y verificar el funcionamiento con: ***docker --version***
 
 ![Verificación de Docker](https://raw.githubusercontent.com/FWilliamC/chatbot-telegram-pdf-ollama/main/Captura%20de%20pantalla%202025-11-21%20172633.png)
 
@@ -33,3 +31,27 @@ Ollama permite ejecutar modelos como llama3, mistral, nomic-embed-text, etc.
 Instalación:
 
 En Windows:
+
+bash:
+
+***winget install Ollama.Ollama***
+
+Verificar:
+
+bash:
+
+***ollama --version***
+
+capturaaaaa
+
+
+Descargar modelos necesarios:
+
+bash:
+
+***ollama pull llama3***
+
+***ollama pull nomic-embed-text***
+
+
+
