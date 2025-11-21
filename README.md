@@ -85,7 +85,9 @@ Puedes usar Docker:
   -v ~/.n8n:/home/node/.n8n \
   n8nio/n8n***
 
-![Verificación de Docker]
+![Verificación de Docker](https://github.com/FWilliamC/chatbot-telegram-pdf-ollama/blob/main/Captura%20de%20pantalla%202025-11-21%20181938.png)
+
+## 2. Configuración del Bot en Telegram
 
 
 
