@@ -22,4 +22,4 @@ Pasos:
 
 2. Instalarlo y verificar el funcionamiento con:
 
-   
+   ![Captura1](https://raw.githubusercontent.com/FWilliamC/chatbot-telegram-pdf-ollama/main/Captura%20de%20pantalla%202025-11-21%2020172633.png)
