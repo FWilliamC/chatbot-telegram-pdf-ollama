@@ -55,4 +55,15 @@ bash:
 ***ollama pull nomic-embed-text***
 
 
+![Verificación de Docker](https://github.com/FWilliamC/chatbot-telegram-pdf-ollama/blob/main/Captura%20de%20pantalla%202025-11-21%20175926.png)
+
+# 1.3. Instalar Qdrant con Docker
+
+bash:
+
+***docker run -p 6333:6333 -p 6334:6334 qdrant/qdrant***
+
 ![Verificación de Docker]
+
+
+
