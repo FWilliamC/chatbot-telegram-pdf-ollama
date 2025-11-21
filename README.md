@@ -63,7 +63,19 @@ bash:
 
 ***docker run -p 6333:6333 -p 6334:6334 qdrant/qdrant***
 
+
+![Verificación de Docker](https://github.com/FWilliamC/chatbot-telegram-pdf-ollama/blob/main/Captura%20de%20pantalla%202025-11-21%20181205.png)
+
+# 1.4. Instalar ngrok
+
+Para exponer n8n hacia Telegram:
+
+bash:
+
+***ngrok http 5678***
+
 ![Verificación de Docker]
+
 
 
 
