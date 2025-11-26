@@ -102,6 +102,19 @@ Comandos:
   ***7887885099:AAHN-ag8JsC6a9Ly-WKtY8ecHxtW_Jf3g0I***
 
   
+![Verificación de Docker](https://github.com/FWilliamC/chatbot-telegram-pdf-ollama/blob/main/Captura%20de%20pantalla%202025-11-25%20191349.png)
+
+# 2.2 Registrar el Webhook
+
+Usando la URL de Ngrok:
+
+***https://TU-NGROK-URL/webhook***
+
+# 3. Construcción del Workflow en n8n
+
+A continuación se describe todo el workflow tal como aparece en la imagen.
+
 ![Verificación de Docker]
+
 
 
