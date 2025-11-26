@@ -126,7 +126,7 @@ Activa el flujo cada vez que un usuario envía un mensaje o PDF.
 
 - Pasa al Switch.
 
-  ![Verificación de Docker]
+  ![Verificación de Docker](https://github.com/FWilliamC/chatbot-telegram-pdf-ollama/blob/main/Captura%20de%20pantalla%202025-11-25%20194206.png)
 
 # 4.2 Nodo Switch
 
