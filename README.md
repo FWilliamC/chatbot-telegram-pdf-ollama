@@ -234,7 +234,8 @@ Consulta los embeddings del PDF cargado.
 
 El agente genera la respuesta → se envía a Telegram.
 
-![Verificación de Docker](https://github.com/FWilliamC/chatbot-telegram-pdf-ollama/blob/main/Captura%20de%20pantalla%202025-11-25%20201206.png)
+![Verificación de Docker](https://github.com/FWilliamC/chatbot-telegram-pdf-ollama/blob/main/Captura%20de%20pantalla%202025-11-25%20204804.png)
+![Verificación de Docker]
 
 # 7. Funcionamiento final
 
