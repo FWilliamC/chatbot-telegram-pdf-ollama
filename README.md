@@ -161,7 +161,7 @@ Configuración recomendada:
 
 - Overlap: 50 tokens
 
-  ![Verificación de Docker]
+  ![Verificación de Docker](https://github.com/FWilliamC/chatbot-telegram-pdf-ollama/blob/main/Captura%20de%20pantalla%202025-11-25%20194414.png)
 
 # 4.6 Nodo Embeddings – Ollama
 
