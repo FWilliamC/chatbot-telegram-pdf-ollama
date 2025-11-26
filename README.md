@@ -157,7 +157,9 @@ Extrae el texto del PDF.
 
 El nodo Default Data Loader se encarga de recibir los chunks de texto procesados por el Token Splitter y devolverlos en un formato estándar compatible con los Vector Stores de n8n, incluido Qdrant.
 
-# 4.5 Token Splitter
+![Verificación de Docker](https://github.com/FWilliamC/chatbot-telegram-pdf-ollama/blob/main/Captura%20de%20pantalla%202025-11-25%20194406.png)
+
+# 4.6 Token Splitter
 
 Divide el texto del PDF en chunks.
 
@@ -169,7 +171,7 @@ Configuración recomendada:
 
   ![Verificación de Docker](https://github.com/FWilliamC/chatbot-telegram-pdf-ollama/blob/main/Captura%20de%20pantalla%202025-11-25%20194414.png)
 
-# 4.6 Nodo Embeddings – Ollama
+# 4.7 Nodo Embeddings – Ollama
 
   Genera los embeddings con:
 
@@ -177,7 +179,7 @@ Configuración recomendada:
 
   ![Verificación de Docker](https://github.com/FWilliamC/chatbot-telegram-pdf-ollama/blob/main/Captura%20de%20pantalla%202025-11-25%20194356.png)
 
-# 4.7 Nodo Qdrant Vector Store
+# 4.8 Nodo Qdrant Vector Store
 
  Guarda los embeddings del PDF.
 
