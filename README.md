@@ -208,7 +208,7 @@ Funciones:
 
 - Responde como asistente.
 
-![Verificación de Docker]
+![Verificación de Docker](https://github.com/FWilliamC/chatbot-telegram-pdf-ollama/blob/main/Captura%20de%20pantalla%202025-11-25%20201109.png)
 
 # 5.2 Modelo de Chat – Ollama
 
