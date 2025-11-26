@@ -270,5 +270,24 @@ El agente genera la respuesta → se envía a Telegram.
 
 # 8. Conclusiones
 
+**1. Es totalmente posible montar un sistema RAG completo de manera local**
+
+El proyecto demostró que se puede armar un chatbot funcional sin depender de servicios externos:
+Ollama, Qdrant, Docker, n8n y Ngrok permiten crear un flujo completo para procesar PDFs y responder preguntas sobre ellos. Esto lo hace ideal para personas que quieren trabajar offline o sin pagar APIs.
+
+**2. El flujo quedó claro, modular y fácil de mejorar**
+
+Organizar el proceso en nodos (extraer PDF, dividir texto, generar embeddings, guardarlos, responder) hizo que todo quedara entendible y fácil de mantener. Si más adelante se quiere agregar otra función, solo es añadir un nodo más al workflow.
+
+**3. Qdrant y los embeddings permitieron manejar varios documentos de forma inteligente**
+
+Gracias al sistema de embeddings con Ollama y al almacenamiento vectorial con Qdrant, el bot puede buscar información relevante dentro de uno o varios PDFs. Esto hace que las respuestas tengan sentido, incluso en documentos largos.
+
+**4. La velocidad depende del hardware y del uso de modelos locales**
+
+El rendimiento del bot cambia según el computador que tenga cada persona.
+Modelos locales como Ollama funcionan muy bien, pero sí pueden tardar un poco en generar respuestas, especialmente si el equipo no tiene buena CPU o RAM.
+Aun así, tener un sistema 100% local compensa esa demora porque ofrece privacidad total y cero costos.
+
 # 9. Repositorio Final
 
