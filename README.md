@@ -32,13 +32,13 @@ Instalación:
 
 En Windows:
 
-bash:
+**cmd:**
 
 ***winget install Ollama.Ollama***
 
 Verificar:
 
-bash:
+**cmd:**
 
 ***ollama --version***
 
@@ -48,7 +48,7 @@ bash:
 
 Descargar modelos necesarios:
 
-bash:
+**bash:**
 
 ***ollama pull llama3***
 
@@ -59,7 +59,7 @@ bash:
 
 # 1.3. Instalar Qdrant con Docker
 
-bash:
+**cmd:**
 
 ***docker run -p 6333:6333 -p 6334:6334 qdrant/qdrant***
 
@@ -70,7 +70,7 @@ bash:
 
 Para exponer n8n hacia Telegram:
 
-bash:
+**cmd:**
 
 ***ngrok http 5678***
 
