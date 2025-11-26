@@ -149,7 +149,13 @@ Descarga el archivo PDF desde Telegram.
 
 # 4.4 Nodo Extract From File – PDF
 
+Extrae el texto del PDF.
+
 ![Verificación de Docker](https://github.com/FWilliamC/chatbot-telegram-pdf-ollama/blob/main/Captura%20de%20pantalla%202025-11-25%20194331.png)
+
+# 4.5 Default Data Loader
+
+El nodo Default Data Loader se encarga de recibir los chunks de texto procesados por el Token Splitter y devolverlos en un formato estándar compatible con los Vector Stores de n8n, incluido Qdrant.
 
 # 4.5 Token Splitter
 
