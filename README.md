@@ -216,7 +216,7 @@ Modelo:
 
 ***llama3.2***
 
-![Verificación de Docker]
+![Verificación de Docker](https://github.com/FWilliamC/chatbot-telegram-pdf-ollama/blob/main/Captura%20de%20pantalla%202025-11-25%20201121.png)
 
 # 5.3 Simple Memory
 
