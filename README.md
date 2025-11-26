@@ -145,11 +145,11 @@ Rama 2 → Archivo
 
 Descarga el archivo PDF desde Telegram.
 
-![Verificación de Docker]
+![Verificación de Docker](https://github.com/FWilliamC/chatbot-telegram-pdf-ollama/blob/main/Captura%20de%20pantalla%202025-11-25%20194317.png)
 
 # 4.4 Nodo Extract From File – PDF
 
-![Verificación de Docker](https://github.com/FWilliamC/chatbot-telegram-pdf-ollama/blob/main/Captura%20de%20pantalla%202025-11-25%20194317.png)
+![Verificación de Docker](https://github.com/FWilliamC/chatbot-telegram-pdf-ollama/blob/main/Captura%20de%20pantalla%202025-11-25%20194331.png)
 
 # 4.5 Token Splitter
 
