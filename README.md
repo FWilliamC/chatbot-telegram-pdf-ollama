@@ -118,7 +118,7 @@ A continuación se describe todo el workflow tal como aparece en la imagen.
 
 # 4. Explicación detallada del workflow
 
-#4.1 Nodo Telegram Trigger – Documento
+# 4.1 Nodo Telegram Trigger – Documento
 
 Activa el flujo cada vez que un usuario envía un mensaje o PDF.
 
@@ -137,6 +137,7 @@ Detecta si el usuario envió:
 - Archivo PDF
 
 Rama 1 → Texto
+
 Rama 2 → Archivo
 
 ![Verificación de Docker](https://github.com/FWilliamC/chatbot-telegram-pdf-ollama/blob/main/Captura%20de%20pantalla%202025-11-25%20194254.png)
@@ -165,7 +166,7 @@ Divide el texto del PDF en chunks.
 
 Configuración recomendada:
 
-- Chunk size: 300 tokens
+- Chunk size: 512 tokens
 
 - Overlap: 50 tokens
 
@@ -187,7 +188,7 @@ Configuración recomendada:
 
 - URL: http://localhost:6333
 
-- Collection: pdf_documents
+- Collection: mi_bot_ollama
 
 - Upsert: ON
 
