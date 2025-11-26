@@ -228,7 +228,7 @@ Permite conversaciones largas.
 
 Consulta los embeddings del PDF cargado.
 
-![Verificación de Docker]
+![Verificación de Docker](https://github.com/FWilliamC/chatbot-telegram-pdf-ollama/blob/main/Captura%20de%20pantalla%202025-11-25%20201143.png)
 
 # 6. Nodo final – Enviar mensaje a Telegram
 
