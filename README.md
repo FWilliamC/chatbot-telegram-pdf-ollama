@@ -114,7 +114,151 @@ Usando la URL de Ngrok:
 
 A continuación se describe todo el workflow tal como aparece en la imagen.
 
+![Verificación de Docker](https://github.com/FWilliamC/chatbot-telegram-pdf-ollama/blob/main/Captura%20de%20pantalla%202025-11-19%20175437.png)
+
+# 4. Explicación detallada del workflow
+
+#4.1 Nodo Telegram Trigger – Documento
+
+Activa el flujo cada vez que un usuario envía un mensaje o PDF.
+
+- Extrae mensaje o archivo.
+
+- Pasa al Switch.
+
+  ![Verificación de Docker]
+
+# 4.2 Nodo Switch
+
+Detecta si el usuario envió:
+
+- Texto
+
+- Archivo PDF
+
+Rama 1 → Texto
+Rama 2 → Archivo
+
 ![Verificación de Docker]
 
+# 4.3 Nodo Get a file
 
+Descarga el archivo PDF desde Telegram.
+
+![Verificación de Docker]
+
+# 4.4 Nodo Extract From File – PDF
+
+![Verificación de Docker]
+
+# 4.5 Token Splitter
+
+Divide el texto del PDF en chunks.
+
+Configuración recomendada:
+
+- Chunk size: 300 tokens
+
+- Overlap: 50 tokens
+
+  ![Verificación de Docker]
+
+# 4.6 Nodo Embeddings – Ollama
+
+  Genera los embeddings con:
+
+  ***nomic-embed-text***
+
+  ![Verificación de Docker]
+
+# 4.7 Nodo Qdrant Vector Store
+
+ Guarda los embeddings del PDF.
+
+ Parámetros:
+
+- URL: http://localhost:6333
+
+- Collection: pdf_documents
+
+- Upsert: ON
+
+ ![Verificación de Docker]
+
+# 5. Inteligencia Artificial – Agente
+
+Este es el cerebro del chatbot.
+
+Funciones:
+
+- Busca información en Qdrant.
+
+- Usa el modelo de chat de Ollama.
+
+- Mantiene memoria conversacional.
+
+- Responde como asistente.
+
+![Verificación de Docker]
+
+# 5.2 Modelo de Chat – Ollama
+
+Modelo:
+
+***llama3.2***
+
+![Verificación de Docker]
+
+# 5.3 Simple Memory
+
+Permite conversaciones largas.
+
+![Verificación de Docker]
+
+# 5.4 Qdrant Vector Store (Consulta)
+
+Consulta los embeddings del PDF cargado.
+
+![Verificación de Docker]
+
+# 6. Nodo final – Enviar mensaje a Telegram
+
+El agente genera la respuesta → se envía a Telegram.
+
+![Verificación de Docker]
+
+# 7. Funcionamiento final
+
+1.Usuario envía un PDF.
+
+2.El workflow:
+
+ - Lo descarga
+
+ - Lo lee
+
+ - Lo divide
+
+ - Genera embeddings
+
+ - Los guarda en Qdrant
+
+3.Usuario pregunta algo del PDF.
+
+4.El AI Agent:
+
+ - Busca en Qdrant
+
+ - Recupera el contenido
+
+ - Genera respuesta con Ollama
+
+5.El bot envía la respuesta por Telegram.
+
+
+![Verificación de Docker]
+
+# 8. Conclusiones
+
+# 9. Repositorio Final
 
