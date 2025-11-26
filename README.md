@@ -169,7 +169,7 @@ Configuración recomendada:
 
   ***nomic-embed-text***
 
-  ![Verificación de Docker]
+  ![Verificación de Docker](https://github.com/FWilliamC/chatbot-telegram-pdf-ollama/blob/main/Captura%20de%20pantalla%202025-11-25%20194356.png)
 
 # 4.7 Nodo Qdrant Vector Store
 
