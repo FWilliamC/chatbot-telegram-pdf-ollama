@@ -139,7 +139,7 @@ Detecta si el usuario envió:
 Rama 1 → Texto
 Rama 2 → Archivo
 
-![Verificación de Docker]
+![Verificación de Docker](https://github.com/FWilliamC/chatbot-telegram-pdf-ollama/blob/main/Captura%20de%20pantalla%202025-11-25%20194254.png)
 
 # 4.3 Nodo Get a file
 
