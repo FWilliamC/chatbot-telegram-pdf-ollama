@@ -89,5 +89,19 @@ Puedes usar Docker:
 
 ## 2. Configuración del Bot en Telegram
 
+# 2.1 Crear el bot con BotFather
+
+Comandos:
+
+- /newbot
+
+- Elegir nombre y usuario del bot.
+
+- Telegram entrega un TOKEN así:
+
+  ***7887885099:AAHN-ag8JsC6a9Ly-WKtY8ecHxtW_Jf3g0I***
+
+  
+![Verificación de Docker]
 
 
