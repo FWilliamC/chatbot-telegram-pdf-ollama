@@ -291,3 +291,5 @@ Aun así, tener un sistema 100% local compensa esa demora porque ofrece privacid
 
 # 9. Repositorio Final
 
+https://github.com/FWilliamC/chatbot-telegram-pdf-ollama/blob/main/ChatBot.json
+
