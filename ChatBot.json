@@ -1,0 +1,493 @@
+{
+  "name": "ChatBot",
+  "nodes": [
+    {
+      "parameters": {
+        "mode": "insert",
+        "qdrantCollection": {
+          "__rl": true,
+          "value": "mi_bot_ollama",
+          "mode": "list",
+          "cachedResultName": "mi_bot_ollama"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreQdrant",
+      "typeVersion": 1.3,
+      "position": [
+        -1440,
+        112
+      ],
+      "id": "3c093ef4-2da4-4ebe-89a0-7a1ad950dff9",
+      "name": "Qdrant Vector Store",
+      "credentials": {
+        "qdrantApi": {
+          "id": "0622aOQerhiXPn2H",
+          "name": "QdrantApi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": "nomic-embed-text:latest"
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOllama",
+      "typeVersion": 1,
+      "position": [
+        -1648,
+        432
+      ],
+      "id": "6b0514ff-1d8f-4c5e-bb85-dc55af3f1292",
+      "name": "Embeddings Ollama",
+      "credentials": {
+        "ollamaApi": {
+          "id": "7n1Snos11GiMLl2f",
+          "name": "Ollama account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "textSplittingMode": "custom",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+      "typeVersion": 1.1,
+      "position": [
+        -1376,
+        336
+      ],
+      "id": "cc860b35-9b34-4b76-aa59-b098b665064e",
+      "name": "Default Data Loader"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.message.text }}",
+        "options": {
+          "systemMessage": "Eres Jarvis 🤵‍♂️, un asistente amable y profesional. Tu única fuente de información es la herramienta Retrieval.\n\nReglas:\n\nSi el usuario solo saluda (“Hola”, “Hola Jarvis”, etc.), responde:\n“¡Hola! Soy Jarvis, tu asistente. ¿En qué puedo ayudarte hoy? 😊”\n\nPara cualquier otra pregunta, siempre usa Retrieval para buscar la respuesta.\n\nResponde de forma clara y profesional, con un tono amable e incluyendo 1–2 emojis (🤔✨📄👍).\n\nUsa la memoria para mantener contexto.\n\nSi la respuesta no está en Retrieval, di:\n“Lo siento, mi conocimiento se limita a la base de datos. ¿Quieres que busque algo más? 🤖”"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        -496,
+        -160
+      ],
+      "id": "af9d8b04-c1a4-478c-8c05-c033c0c6d1fa",
+      "name": "AI Agent",
+      "executeOnce": false
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "fileId": "={{ $json.message.document.file_id }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -1888,
+        160
+      ],
+      "id": "a93530d4-0944-4012-8b87-6e13dd493935",
+      "name": "Get a file",
+      "webhookId": "0af9281a-5ba9-41e7-beaf-99b19a7d240d",
+      "retryOnFail": false,
+      "alwaysOutputData": false,
+      "executeOnce": false,
+      "notesInFlow": false,
+      "credentials": {
+        "telegramApi": {
+          "id": "aBlRobpr6L5LQsn5",
+          "name": "Telegram franco_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "pdf",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1,
+      "position": [
+        -1680,
+        160
+      ],
+      "id": "d7140212-274d-44b8-b3cf-bbce14713114",
+      "name": "Extract from File"
+    },
+    {
+      "parameters": {
+        "model": "llama3.2:3b",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOllama",
+      "typeVersion": 1,
+      "position": [
+        -640,
+        192
+      ],
+      "id": "5c511ba1-ae20-459d-9e9f-6f261470cbc1",
+      "name": "Ollama Chat Model",
+      "credentials": {
+        "ollamaApi": {
+          "id": "7n1Snos11GiMLl2f",
+          "name": "Ollama account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "updates": [
+          "message",
+          "*"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -2256,
+        -144
+      ],
+      "id": "bd256691-451b-4195-a10c-10e1a46e3a6d",
+      "name": "Documento",
+      "webhookId": "c49b7633-1bdc-4c03-a84c-696db49d415e",
+      "credentials": {
+        "telegramApi": {
+          "id": "aBlRobpr6L5LQsn5",
+          "name": "Telegram franco_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.message.text }}",
+                    "rightValue": "=",
+                    "operator": {
+                      "type": "string",
+                      "operation": "notEmpty",
+                      "singleValue": true
+                    },
+                    "id": "f9308834-0470-44f7-b5d6-4f6b9d04c1df"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "texto"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "a5f89689-0302-4261-8018-1c19f407feca",
+                    "leftValue": "={{ $json.message.document }}",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "object",
+                      "operation": "exists",
+                      "singleValue": true
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "pdf"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.3,
+      "position": [
+        -2000,
+        -144
+      ],
+      "id": "09bde8c2-0d44-4add-9ef2-7c272d01528e",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "chunkSize": 512,
+        "chunkOverlap": 50
+      },
+      "type": "@n8n/n8n-nodes-langchain.textSplitterTokenSplitter",
+      "typeVersion": 1,
+      "position": [
+        -1392,
+        576
+      ],
+      "id": "5b4b9656-e73d-4df3-b4a6-21d6a33e009e",
+      "name": "Token Splitter"
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Switch').item.json.message.chat.id }}",
+        "text": "={{ $json.output }}",
+        "additionalFields": {
+          "parse_mode": "HTML"
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        96,
+        -160
+      ],
+      "id": "47ffed54-2711-4920-9dbf-a2209db5cbf5",
+      "name": "Send a text message",
+      "webhookId": "ecff9eaa-71d9-46df-bf34-92a13e3505a4",
+      "credentials": {
+        "telegramApi": {
+          "id": "aBlRobpr6L5LQsn5",
+          "name": "Telegram franco_bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "retrieve-as-tool",
+        "toolDescription": "Herramienta de búsqueda para consultar la base de datos de conocimiento. Utiliza esta herramienta obligatoriamente para recuperar contexto y hechos de los documentos internos cargados, respondiendo a preguntas sobre información general, políticas, procedimientos y datos variados. Si la respuesta a la pregunta del usuario está potencialmente contenida en un documento, usa esta herramienta.",
+        "qdrantCollection": {
+          "__rl": true,
+          "value": "mi_bot_ollama",
+          "mode": "list",
+          "cachedResultName": "mi_bot_ollama"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreQdrant",
+      "typeVersion": 1.3,
+      "position": [
+        -272,
+        128
+      ],
+      "id": "a9a71505-1b20-49b4-9501-9706eb83c9b1",
+      "name": "Qdrant Vector Store2",
+      "credentials": {
+        "qdrantApi": {
+          "id": "0622aOQerhiXPn2H",
+          "name": "QdrantApi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": "nomic-embed-text:latest"
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOllama",
+      "typeVersion": 1,
+      "position": [
+        -224,
+        368
+      ],
+      "id": "ce71dd0c-7dc9-4b1a-9825-f7fb47bbae76",
+      "name": "Embeddings Ollama2",
+      "credentials": {
+        "ollamaApi": {
+          "id": "7n1Snos11GiMLl2f",
+          "name": "Ollama account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $json.message.chat.id }}",
+        "contextWindowLength": 3
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        -448,
+        208
+      ],
+      "id": "37b385fd-572e-45d4-80c5-1804785e3786",
+      "name": "Simple Memory"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Embeddings Ollama": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Qdrant Vector Store",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Default Data Loader": {
+      "ai_document": [
+        [
+          {
+            "node": "Qdrant Vector Store",
+            "type": "ai_document",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Qdrant Vector Store": {
+      "main": [
+        []
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Send a text message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get a file": {
+      "main": [
+        [
+          {
+            "node": "Extract from File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract from File": {
+      "main": [
+        [
+          {
+            "node": "Qdrant Vector Store",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ollama Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Documento": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Get a file",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Token Splitter": {
+      "ai_textSplitter": [
+        [
+          {
+            "node": "Default Data Loader",
+            "type": "ai_textSplitter",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Qdrant Vector Store2": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ],
+      "ai_vectorStore": [
+        []
+      ]
+    },
+    "Embeddings Ollama2": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Qdrant Vector Store2",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "1bf99a89-eac6-4a5d-87bf-4fdefe908bc7",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "0c825b4ea9cf531c0fad63ec3fb4bd57fa8ad2b37926db3ca25c359ea0b12e23"
+  },
+  "id": "06ml91nrFisBVQ8v",
+  "tags": []
+}
