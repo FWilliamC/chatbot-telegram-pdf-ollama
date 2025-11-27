@@ -115,7 +115,7 @@ Usando la URL de Ngrok:
 
 # 3. Construcción del Workflow en n8n
 
-A continuación se describe todo el workflow tal como aparece en la imagen.
+A continuación presentamos todo el workflow completo.
 
 ![Verificación de Docker](https://github.com/FWilliamC/chatbot-telegram-pdf-ollama/blob/main/Captura%20de%20pantalla%202025-11-19%20175437.png)
 
