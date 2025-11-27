@@ -2,7 +2,8 @@
 
 
 # Autor:
-Franco William Cuastumal 
+**Franco William Cuastumal** 
+**Jhon Felipe Loaiza Restrepo**
 -----------------------
 
 
