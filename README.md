@@ -157,13 +157,19 @@ Extrae el texto del PDF.
 
 ![Verificación de Docker](https://github.com/FWilliamC/chatbot-telegram-pdf-ollama/blob/main/Captura%20de%20pantalla%202025-11-25%20194331.png)
 
-# 4.5 Default Data Loader
+# 4.5 Nodo Code in JavaScript
+
+Su función es tomar los metadatos del archivo y generar un identificador único que sirva para consultar si el PDF ya fue cargado anteriormente.
+
+![Verificación de Docker]
+
+# 4.6 Default Data Loader
 
 El nodo Default Data Loader se encarga de recibir los chunks de texto procesados por el Token Splitter y devolverlos en un formato estándar compatible con los Vector Stores de n8n, incluido Qdrant.
 
 ![Verificación de Docker](https://github.com/FWilliamC/chatbot-telegram-pdf-ollama/blob/main/Captura%20de%20pantalla%202025-11-25%20194406.png)
 
-# 4.6 Token Splitter
+# 4.7 Token Splitter
 
 Divide el texto del PDF en chunks.
 
@@ -175,7 +181,7 @@ Configuración recomendada:
 
   ![Verificación de Docker](https://github.com/FWilliamC/chatbot-telegram-pdf-ollama/blob/main/Captura%20de%20pantalla%202025-11-25%20194414.png)
 
-# 4.7 Nodo Embeddings – Ollama
+# 4.8 Nodo Embeddings – Ollama
 
   Genera los embeddings con:
 
@@ -183,7 +189,7 @@ Configuración recomendada:
 
   ![Verificación de Docker](https://github.com/FWilliamC/chatbot-telegram-pdf-ollama/blob/main/Captura%20de%20pantalla%202025-11-25%20194356.png)
 
-# 4.8 Nodo Qdrant Vector Store
+# 4.9 Nodo Qdrant Vector Store
 
  Guarda los embeddings del PDF.
 
@@ -197,24 +203,23 @@ Configuración recomendada:
 
  ![Verificación de Docker](https://github.com/FWilliamC/chatbot-telegram-pdf-ollama/blob/main/Captura%20de%20pantalla%202025-11-25%20194345.png)
 
- # 4.9  Nodo Aggregate
+ # 5  Nodo Aggregate
 
- ---------------------------
- ------------------------
- ---------------------
+ El nodo Aggregate convierte esa respuesta en un solo objeto que indica:
+
+ - Cantidad de coincidencias encontradas
+
+ - Si el documento existe o no
 
   ![Verificación de Docker]
 
-  # 4.9 Nodo Send a text messagge
+  # 5.1 Nodo Send a text messagge
 
-  ----------------------------
-
-  -----------------
-  --------------
+Este nodo envía un mensaje directo al usuario de Telegram informando si el documento ha sido cargado correctamente.
   
 ![Verificación de Docker]
 
-# 5. Inteligencia Artificial – Agente
+# 6. Inteligencia Artificial – Agente
 
 Este es el cerebro del chatbot.
 
@@ -230,7 +235,7 @@ Funciones:
 
 ![Verificación de Docker](https://github.com/FWilliamC/chatbot-telegram-pdf-ollama/blob/main/Captura%20de%20pantalla%202025-11-25%20201109.png)
 
-# 5.2 Modelo de Chat – Ollama
+# 6.2 Modelo de Chat – Ollama
 
 Modelo:
 
@@ -238,25 +243,25 @@ Modelo:
 
 ![Verificación de Docker](https://github.com/FWilliamC/chatbot-telegram-pdf-ollama/blob/main/Captura%20de%20pantalla%202025-11-25%20201121.png)
 
-# 5.3 Simple Memory
+# 6.3 Simple Memory
 
 Permite conversaciones largas.
 
 ![Verificación de Docker](https://github.com/FWilliamC/chatbot-telegram-pdf-ollama/blob/main/Captura%20de%20pantalla%202025-11-25%20201130.png)
 
-# 5.4 Qdrant Vector Store (Consulta)
+# 6.4 Qdrant Vector Store (Consulta)
 
 Consulta los embeddings del PDF cargado.
 
 ![Verificación de Docker](https://github.com/FWilliamC/chatbot-telegram-pdf-ollama/blob/main/Captura%20de%20pantalla%202025-11-25%20201143.png)
 
-# 6. Nodo final – Enviar mensaje a Telegram
+# 7. Nodo final – Enviar mensaje a Telegram
 
 El agente genera la respuesta → se envía a Telegram.
 
 ![Verificación de Docker](https://github.com/FWilliamC/chatbot-telegram-pdf-ollama/blob/main/Captura%20de%20pantalla%202025-11-25%20201206.png)
 
-# 7. Funcionamiento final
+# 8. Funcionamiento final
 
 1.Usuario envía un PDF.
 
@@ -288,7 +293,7 @@ El agente genera la respuesta → se envía a Telegram.
 ![Verificación de Docker](https://github.com/FWilliamC/chatbot-telegram-pdf-ollama/blob/main/Captura%20de%20pantalla%202025-11-25%20204804.png)
 ![Verificación de Docker](https://github.com/FWilliamC/chatbot-telegram-pdf-ollama/blob/main/Captura%20de%20pantalla%202025-11-25%20204813.png)
 
-# 8. Conclusiones
+# 9. Conclusiones
 
 **1. Es totalmente posible montar un sistema RAG completo de manera local**
 
@@ -309,7 +314,7 @@ El rendimiento del bot cambia según el computador que tenga cada persona.
 Modelos locales como Ollama funcionan muy bien, pero sí pueden tardar un poco en generar respuestas, especialmente si el equipo no tiene buena CPU o RAM.
 Aun así, tener un sistema 100% local compensa esa demora porque ofrece privacidad total y cero costos.
 
-# 9. Repositorio Final
+# 10. Repositorio Final
 
 https://github.com/FWilliamC/chatbot-telegram-pdf-ollama/blob/main/docker-compose.yml
 
