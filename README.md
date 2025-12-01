@@ -217,7 +217,7 @@ Configuración recomendada:
 
 Este nodo envía un mensaje directo al usuario de Telegram informando si el documento ha sido cargado correctamente.
   
-![Verificación de Docker]
+![Verificación de Docker](https://github.com/FWilliamC/chatbot-telegram-pdf-ollama/blob/main/Captura%20de%20pantalla%202025-12-01%20154626.png)
 
 # 6. Inteligencia Artificial – Agente
 
