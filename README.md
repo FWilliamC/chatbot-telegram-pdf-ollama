@@ -203,7 +203,7 @@ Configuración recomendada:
 
  ![Verificación de Docker](https://github.com/FWilliamC/chatbot-telegram-pdf-ollama/blob/main/Captura%20de%20pantalla%202025-11-25%20194345.png)
 
- # 5  Nodo Aggregate
+ # 5.  Nodo Aggregate
 
  El nodo Aggregate convierte esa respuesta en un solo objeto que indica:
 
