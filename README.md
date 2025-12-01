@@ -197,6 +197,23 @@ Configuración recomendada:
 
  ![Verificación de Docker](https://github.com/FWilliamC/chatbot-telegram-pdf-ollama/blob/main/Captura%20de%20pantalla%202025-11-25%20194345.png)
 
+ # 4.9  Nodo Aggregate
+
+ ---------------------------
+ ------------------------
+ ---------------------
+
+  ![Verificación de Docker]
+
+  # 4.9 Nodo Send a text messagge
+
+  ----------------------------
+
+  -----------------
+  --------------
+  
+![Verificación de Docker]
+
 # 5. Inteligencia Artificial – Agente
 
 Este es el cerebro del chatbot.
