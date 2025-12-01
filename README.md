@@ -211,7 +211,7 @@ Configuración recomendada:
 
  - Si el documento existe o no
 
-  ![Verificación de Docker]
+  ![Verificación de Docker](https://github.com/FWilliamC/chatbot-telegram-pdf-ollama/blob/main/Captura%20de%20pantalla%202025-12-01%20154613.png)
 
   # 5.1 Nodo Send a text messagge
 
