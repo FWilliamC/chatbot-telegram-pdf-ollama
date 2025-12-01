@@ -161,7 +161,7 @@ Extrae el texto del PDF.
 
 Su función es tomar los metadatos del archivo y generar un identificador único que sirva para consultar si el PDF ya fue cargado anteriormente.
 
-![Verificación de Docker]()
+![Verificación de Docker](https://github.com/FWilliamC/chatbot-telegram-pdf-ollama/blob/main/Captura%20de%20pantalla%202025-12-01%20154604.png)
 
 # 4.6 Default Data Loader
 
