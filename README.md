@@ -161,7 +161,7 @@ Extrae el texto del PDF.
 
 Su función es tomar los metadatos del archivo y generar un identificador único que sirva para consultar si el PDF ya fue cargado anteriormente.
 
-![Verificación de Docker]
+![Verificación de Docker]()
 
 # 4.6 Default Data Loader
 
