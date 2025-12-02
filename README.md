@@ -117,7 +117,7 @@ Usando la URL de Ngrok:
 
 A continuación presentamos todo el workflow completo.
 
-![Verificación de Docker](https://github.com/FWilliamC/chatbot-telegram-pdf-ollama/blob/main/Captura%20de%20pantalla%202025-11-19%20175437.png)
+![Verificación de Docker](https://github.com/FWilliamC/chatbot-telegram-pdf-ollama/blob/main/Captura%20de%20pantalla%202025-12-01%20160241.png)
 
 # 4. Explicación detallada del workflow
 
